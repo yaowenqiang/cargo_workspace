@@ -22,7 +22,17 @@ fn main() {
             Box::new(Cons(3, 
                 Box::new(Nil))))));
 
-    println!("{:?}", list)
+    println!("{:?}", list);
+
+    let x = 5;
+    let y = &x;
+    let z = Box::new(x);
+    assert_eq!(5 ,x);
+    //assert_eq!(5 ,y);
+    assert_eq!(5 ,*y);
+    //assert_eq!(5 ,z);
+    assert_eq!(5 ,*z);
+
 
     
 
