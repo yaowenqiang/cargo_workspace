@@ -13,7 +13,16 @@ enum List {
     Nil,
 }
 
+struct CustomSmartPointer {
+    data: String,
+}
 
+
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Dropping CustomSmartPointer with data {}", self.data);
+    }
+}
 struct MyBox<T>(T);
 
 impl<T> MyBox<T> {
@@ -62,6 +71,12 @@ fn main() {
 
     let m = MyBox::new(String::from("Smart Pointer"));
     hello(&m);
+    hello(&(*m)[..]);
+
+
+    let c = CustomSmartPointer{data: String::from("my stuff")};
+    let d = CustomSmartPointer{data: String::from("other stuff")};
+    println!("CustomSmartPointer Created");
 }
 
 fn hello (name: &str) {
