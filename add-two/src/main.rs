@@ -58,8 +58,12 @@ fn main() {
     assert_eq!(5, x);
     assert_eq!(5, *xx);
 
+    hello("Rust");
 
+    let m = MyBox::new(String::from("Smart Pointer"));
+    hello(&m);
+}
 
-    
-
+fn hello (name: &str) {
+    println!("hello : {}", name)
 }
