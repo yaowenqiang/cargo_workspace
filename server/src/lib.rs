@@ -1,5 +1,6 @@
 use std::thread;
 use std::sync::mpsc;
+use std::ops::Drop;
 
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -50,9 +51,20 @@ impl ThreadPool {
     }
 }
 
+impl Drop for ThreadPool {
+    fn drop(&mut self) {
+        for worker in &mut self.workers {
+            println!("Shutting Down worker {}", worker.id);
+            if let Some(thread) = worker.thread.take() {
+                thread.join().unwrap();
+            }
+        }
+    }
+}
+
 struct Worker {
     id: usize, 
-    thread: thread::JoinHandle<()>,
+    thread: Option<thread::JoinHandle<()>>,
 }
 
 impl  Worker {
@@ -66,7 +78,7 @@ impl  Worker {
         }) ;
         Worker {
             id,
-            thread
+            thread: Some(thread),
         }
     }
 }
