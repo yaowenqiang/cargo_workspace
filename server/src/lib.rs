@@ -9,6 +9,12 @@ trait FnBox {
     fn call_box(self: Box<Self>);
 }
 
+
+enum Message {
+    NewJob(Job),
+    Terminate,
+}
+
 impl <F: FnOnce()> FnBox for F {
     fn call_box(self: Box<F>) {
         (*self)()
