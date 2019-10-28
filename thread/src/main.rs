@@ -23,13 +23,37 @@ fn main() {
         //handle.join().unwrap();
     let (tx, rx) = mpsc::channel();
     // tx.send(()).unwrap();
+    let tx1 = mpsc::Sender::clone(&tx);
     thread::spawn(move || {
-        let val = String::from("Hi");
-        tx.send(val).unwrap();
+        let vals = vec![
+            String::from("Hi"),
+            String::from("from"),
+            String::from("the"),
+            String::from("thread"),
+        ];;
+        for v in vals {
+            tx.send(v).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+        //println!("val is {}", val);
     });
 
-    let received = rx.recv().unwrap();
-    println!("Got: {}", received);
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("Are"),
+            String::from("you"),
+            String::from("OK"),
+            String::from("Budy"),
+        ];;
+        for v in vals {
+            tx1.send(v).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+        //println!("val is {}", val);
+    });
+    for  received in rx {
+        println!("Got: {}", received);
+    }
 }
 
 fn bad_thread_usage() {
