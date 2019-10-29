@@ -1,6 +1,7 @@
 use std::thread;
 use std::time::Duration;
 use std::sync::mpsc;
+use std::sync::Mutex;
 
 fn main() {
     let mut v =  vec![1,2,3];
@@ -54,6 +55,8 @@ fn main() {
     for  received in rx {
         println!("Got: {}", received);
     }
+
+    mutex();
 }
 
 fn bad_thread_usage() {
@@ -65,5 +68,15 @@ fn bad_thread_usage() {
 
     //drop(v);
     handle.join().unwrap();
+
+}
+
+fn mutex () {
+    let m = Mutex::new(5);
+    {
+        let mut num  = m.lock().unwrap();
+        *num = 6;
+    }
+    println!("m = {:?}", m);
 
 }
