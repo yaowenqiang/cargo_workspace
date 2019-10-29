@@ -1,7 +1,8 @@
 use std::thread;
 use std::time::Duration;
 use std::sync::mpsc;
-use std::sync::Mutex;
+use std::sync::{Mutex, Arc};
+//use std::rc::Rc;
 
 fn main() {
     let mut v =  vec![1,2,3];
@@ -57,6 +58,7 @@ fn main() {
     }
 
     mutex();
+    mutexes();
 }
 
 fn bad_thread_usage() {
@@ -78,5 +80,40 @@ fn mutex () {
         *num = 6;
     }
     println!("m = {:?}", m);
+
+}
+
+fn mutexes () {
+    let counter = Arc::new(Mutex::new(0));
+    let mut handlers = vec![];
+    for _ in 0 .. 10 {
+
+        let counter = Arc::clone(&counter);
+        let handler = thread::spawn(move || {
+            let mut  num = counter.lock().unwrap();
+            *num += 1;
+        });
+        handlers.push(handler);
+    }
+
+    /*
+    let handle1 = thread::spawn(move || {
+        let mut  num1 = counter.lock().unwrap();
+        *num1 += 1;
+    });
+    handlers.push(handle1);
+
+    let handle2 = thread::spawn(move || {
+        let mut  num2 = counter.lock().unwrap();
+        *num2 += 1;
+    });
+    handlers.push(handle2);
+    */
+
+    for handle in handlers {
+        handle.join().unwrap();
+    }
+
+    println!("Result: {:?}", *counter.lock().unwrap());
 
 }
