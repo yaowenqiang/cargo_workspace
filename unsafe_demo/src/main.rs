@@ -19,9 +19,18 @@ fn main() {
         unsafe_function();
     }
 
-    slice_demo = vec![1,2,3,4];
-    slice_2 = split_at_mut(slice_demo, 2);
-    println!("{} {}",a, b);
+    let mut slice_demo = vec![1,2,3,4];
+    let s = &mut slice_demo[..];
+    let (cc, dd) = split_at_mut(s, 2);
+    println!("{:?} {:?}",cc, dd);
+
+    let mut v = vec![1,2,3,4,5,6];
+    let r = &mut v[..];
+    let (a,b) = r.split_at_mut(3);
+    println!("{:?}", a);
+    println!("{:?}", b);
+    assert_eq!(a, &mut [1,2,3]);
+    assert_eq!(b, &mut [4,5,6]);
 }
 
 unsafe fn unsafe_function() {
