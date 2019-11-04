@@ -1,5 +1,7 @@
 use std::slice;
 
+static HELLO_WORLD: &str = "Hello, World";
+
 fn main() {
     let mut num = 5;
     let r1 = &num as *const i32;
@@ -35,6 +37,8 @@ fn main() {
     unsafe {
         println!("Absolute value of -3 according to C: {}",  abs(-3));
     }
+
+    println!("name is : {}", HELLO_WORLD);
 }
 
 unsafe fn unsafe_function() {
@@ -69,6 +73,8 @@ fn split_at_mut(slice: &mut [i32], mid: usize,) -> (&mut [i32], &mut[i32]) {
             slice::from_raw_parts_mut(ptr.offset(mid as isize), len - mid)
         )
     }
+
+
 }
 
 extern "C" {
