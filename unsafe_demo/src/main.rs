@@ -1,6 +1,7 @@
 use std::slice;
 
 static HELLO_WORLD: &str = "Hello, World";
+static mut COUNTER: i32 = 0;
 
 fn main() {
     let mut num = 5;
@@ -39,8 +40,21 @@ fn main() {
     }
 
     println!("name is : {}", HELLO_WORLD);
+
+    add_to_count(100);
+
+    unsafe {
+        println!("counter is {}\n", COUNTER);
+    }
+
 }
 
+fn add_to_count (inc: i32) {
+
+    unsafe {
+        COUNTER  += inc;
+    }
+}
 unsafe fn unsafe_function() {
     let mut num = 5;
     let r1 = &num as *const i32;
