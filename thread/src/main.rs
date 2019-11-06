@@ -13,6 +13,7 @@ fn main() {
             println!("hi, number {} from the spawned thread!", i);
             println!("Here's a vector {:?}", v);
             thread::sleep(Duration::from_millis(1));
+            println!("current thread id is : {}", thread::getpid());
         }
     });
 
