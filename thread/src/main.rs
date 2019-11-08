@@ -118,3 +118,11 @@ fn mutexes () {
     println!("Result: {:?}", *counter.lock().unwrap());
 
 }
+
+unsafe trait Foo{
+    //methods go here
+}
+
+unsafe impl Foo for i32 {
+
+}
