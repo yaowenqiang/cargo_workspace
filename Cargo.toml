@@ -7,4 +7,5 @@ members = [
     "server",
     "thread",
     "unsafe_demo",
+    "basic",
 ]
