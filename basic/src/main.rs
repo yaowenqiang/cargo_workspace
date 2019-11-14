@@ -17,10 +17,33 @@ fn main() {
 
     let s1 = String::from("hello world");
     let s2 = s1;
-
-    println!("{}", s1);
+    let s3 = s2.clone();
     println!("{}", s2);
-    
-    println!("{}", s);
+    println!("{}", s3);
 
+
+    //println!("{}", s1);
+    //println!("{}", s2);
+    
+    //println!("{}", s);
+    /*
+
+    let t1 = Table{
+        value:1,
+        next: &t2,
+    };
+
+    let t2 = Table {
+        value:2,
+        next: &t1,
+    };
+    */
+
+    
 }
+/*
+struct Table {
+    value: i32,
+    next: &Table,
+}
+*/
