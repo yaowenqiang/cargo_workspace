@@ -39,6 +39,10 @@ fn main() {
     };
     */
 
+
+    let mut ss = String::from("hello world");
+    ss.push_str(", are you ok?");
+    println!("{}", ss);
     
 }
 /*
