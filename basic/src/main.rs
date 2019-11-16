@@ -43,6 +43,16 @@ fn main() {
     let mut ss = String::from("hello world");
     ss.push_str(", are you ok?");
     println!("{}", ss);
+    let s = String::from("Hello");
+    take_ownership(s);
+    //println!("after take_ownership, {}", s);, won't work,
+
+    let x = 5;
+
+    make_copy(x);
+
+
+
     
 }
 /*
@@ -51,3 +61,11 @@ struct Table {
     next: &Table,
 }
 */
+
+fn take_ownership(some_string: String) {
+    println!("take_ownership: {}", some_string);
+}
+
+fn make_copy(some_integer: i32) {
+    println!("make_copy: {}", some_integer);
+}
