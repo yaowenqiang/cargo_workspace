@@ -46,6 +46,11 @@ fn main() {
     let s = String::from("Hello");
     take_ownership(s);
     //println!("after take_ownership, {}", s);, won't work,
+    //
+
+    let sss = String::from("I am back");
+    let sss1 = takes_and_gives_back(sss);
+    println!("{}", sss1);
 
     let x = 5;
 
@@ -68,4 +73,8 @@ fn take_ownership(some_string: String) {
 
 fn make_copy(some_integer: i32) {
     println!("make_copy: {}", some_integer);
+}
+
+fn takes_and_gives_back(a_string: String)  -> String {
+    a_string
 }
