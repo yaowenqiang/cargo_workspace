@@ -56,6 +56,10 @@ fn main() {
 
     make_copy(x);
 
+    let a_string = give_ownership();
+
+    println!("{}", a_string);
+
 
 
     
@@ -76,5 +80,10 @@ fn make_copy(some_integer: i32) {
 }
 
 fn takes_and_gives_back(a_string: String)  -> String {
+    a_string
+}
+
+fn give_ownership() ->String {
+    let a_string = String::from("hello world a string");
     a_string
 }
