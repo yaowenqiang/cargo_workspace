@@ -60,6 +60,11 @@ fn main() {
 
     println!("{}", a_string);
 
+    let (ss2, len) = calculate_length(ss);
+
+    println!("the length of {} is {}", ss2, len);
+    //println!("{}", ss);
+
 
 
     
@@ -86,4 +91,10 @@ fn takes_and_gives_back(a_string: String)  -> String {
 fn give_ownership() ->String {
     let a_string = String::from("hello world a string");
     a_string
+}
+
+fn calculate_length(s: String) -> (String, usize) 
+{
+    let length = s.len();
+    (s,length)
 }
