@@ -64,6 +64,8 @@ fn main() {
 
     println!("the length of {} is {}", ss2, len);
     //println!("{}", ss);
+    
+    println!("length of ss2 is {}", calculate_lengthv2(&ss2))
 
 
 
@@ -97,4 +99,10 @@ fn calculate_length(s: String) -> (String, usize)
 {
     let length = s.len();
     (s,length)
+}
+
+
+fn calculate_lengthv2(s: &String) -> usize 
+{
+    s.len()
 }
