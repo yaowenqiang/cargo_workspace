@@ -64,8 +64,11 @@ fn main() {
 
     println!("the length of {} is {}", ss2, len);
     //println!("{}", ss);
-    
-    println!("length of ss2 is {}", calculate_lengthv2(&ss2))
+    println!("length of ss2 is {}", calculate_lengthv2(&ss2));
+   let mut ss3 = String::from("hello");
+    println!("{}", ss3);
+    change(&mut ss3);
+    println!("{}", ss3);
 
 
 
@@ -105,4 +108,9 @@ fn calculate_length(s: String) -> (String, usize)
 fn calculate_lengthv2(s: &String) -> usize 
 {
     s.len()
+}
+
+
+fn change(s: &mut String)  {
+    s.push_str("haha");
 }
