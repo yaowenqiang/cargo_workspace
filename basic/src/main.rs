@@ -71,6 +71,21 @@ fn main() {
     println!("{}", ss3);
 
 
+    let mut ssss = String::from("mutable string");
+
+    {
+        let r1 = &mut ssss;
+        //let r2 = &mut ssss; error, only one mutable reference  at the same scope is allowed
+        r1.push_str("add mutable  string to the end\n");
+        println!("{}", r1);
+    }
+
+    let r2 = &mut ssss;
+    r2.push_str("add mutable  string to the end  the second time.");
+    println!("{}", r2);
+
+
+
 
     
 }
