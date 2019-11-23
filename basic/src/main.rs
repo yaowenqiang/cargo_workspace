@@ -85,6 +85,8 @@ fn main() {
     println!("{}", r2);
 
 
+    //let reference_to_nothing = dangle();
+
 
 
     
@@ -129,3 +131,12 @@ fn calculate_lengthv2(s: &String) -> usize
 fn change(s: &mut String)  {
     s.push_str("haha");
 }
+
+
+/*
+fn dangle() -> &String {
+    let s = String::from("Hello");
+    &s
+}
+
+*/
