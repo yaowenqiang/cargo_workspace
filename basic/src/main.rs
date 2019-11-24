@@ -88,6 +88,13 @@ fn main() {
     //let reference_to_nothing = dangle();
 
 
+    let slice1 = String::from("hello world");
+    let slice2  = &slice1[0..5];
+    let slice3  = &slice1[0..11];
+
+    println!("{}", slice2);
+    println!("{}", slice3);
+
 
     
 }
@@ -140,3 +147,15 @@ fn dangle() -> &String {
 }
 
 */
+
+fn first_word(s: &String) ->  usize  {
+    let bytes = s.as_bytes();
+
+    for(i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
+}
