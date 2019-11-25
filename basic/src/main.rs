@@ -96,6 +96,27 @@ fn main() {
     println!("{}", slice3);
 
 
+    let slice4 = String::from("12345678");
+    let slice5 = &slice4[..2];
+    println!("{}", slice5);
+    let slice5 = &slice4[..];
+    println!("{}", slice5);
+    let slice5 = &slice4[..1];
+    println!("slice4[..1] = {}", slice5);
+
+    let slice5 = &slice4[0..1];
+    println!("slice4[0..1] = {}", slice5);
+    //1
+
+    let slice5 = &slice4[1..1];
+    println!("slice4[1..1] = {}", slice5);
+    //1 ??
+    let slice5 = &slice4[2..2];
+    println!("slice4[2..2] = {}", slice5);
+    //"" ??
+
+
+
     
 }
 /*
