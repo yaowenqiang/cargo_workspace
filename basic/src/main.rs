@@ -115,6 +115,11 @@ fn main() {
     println!("slice4[2..2] = {}", slice5);
     //"" ??
 
+    let mut words = String::from("hello world");
+    let mut first_word = first_word(&words);
+    println!("{}", first_word);
+    //words.clear();
+    //println!("{}", first_word);
 
 
     
