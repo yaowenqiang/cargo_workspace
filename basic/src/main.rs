@@ -121,6 +121,9 @@ fn main() {
     //words.clear();
     //println!("{}", first_word);
 
+    let string_literal = "hello world";
+    println!("{}", string_literal);
+
 
     
 }
@@ -174,7 +177,7 @@ fn dangle() -> &String {
 
 */
 
-fn first_word(s: &String) ->  &str  {
+fn first_word(s: &str) ->  &str  {
     let bytes = s.as_bytes();
 
     for(i, &item) in bytes.iter().enumerate() {
