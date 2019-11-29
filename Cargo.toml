@@ -8,4 +8,5 @@ members = [
     "thread",
     "unsafe_demo",
     "basic",
+    "collections",
 ]
