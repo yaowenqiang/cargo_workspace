@@ -188,3 +188,14 @@ fn first_word(s: &str) ->  &str  {
 
     &s[..]
 }
+
+fn used_function() {
+}
+
+
+
+
+#[allow(dead_code)]
+fn unused_function() {
+}
+
