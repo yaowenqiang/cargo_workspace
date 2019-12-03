@@ -9,4 +9,5 @@ members = [
     "unsafe_demo",
     "basic",
     "collections",
+    "crate_demo",
 ]
