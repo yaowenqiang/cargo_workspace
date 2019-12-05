@@ -208,6 +208,7 @@ fn first_word(s: &str) ->  &str  {
     for(i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
             return &s[0..i];
+            G
         }
     }
 
@@ -227,3 +228,10 @@ fn unused_function() {
 
 
 
+enum WebEvent {
+    PageLoad,
+    PageUnload,
+    KeyPress(char),
+    Paste(String),
+    Click{x:i64, y:i64}
+}
