@@ -208,7 +208,6 @@ fn first_word(s: &str) ->  &str  {
     for(i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
             return &s[0..i];
-            G
         }
     }
 
@@ -235,3 +234,14 @@ enum WebEvent {
     Paste(String),
     Click{x:i64, y:i64}
 }
+
+fn inspect(event: WebEvent) {
+    match  event {
+        WebEvent::Click{x,y} => println!("click"),
+        WebEvent::PageUnload => println!("PageUnload"),
+        WebEvent::KeyPress(c) => println!("KeyPress"),
+        WebEvent::Paste(c) => println!("Paste"),
+        WebEvent::PageLoad => println!("PageLoad"),
+    }
+}
+
