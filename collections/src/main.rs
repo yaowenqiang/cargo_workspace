@@ -14,6 +14,12 @@ fn main() {
     let third: &i32 = &vvi[2];
     println!("{}", third);
 
+    for i in &vvi {
+        println!("{}", i);
+    }
+
+
+
 
     let ss = "Hello world";
     let hello =  &ss[0..=4];
