@@ -18,6 +18,16 @@ fn main() {
         println!("{}", i);
     }
 
+    let mut vv2 = vec![1,2,3,4,5];
+
+    for i in &mut vv2 {
+        *i += 60;
+    }
+
+
+    for i in &vv2 {
+        println!("{}", i);
+    }
 
 
 
