@@ -46,5 +46,18 @@ fn main() {
         None => println!("there is not third element")
     }
 
+    let vvvv = vec![1,1,1,1,];
+
+    for i in vvvv { 
+        println!("{}", i);
+    }
+
+    for j in vvvv { 
+        println!("{}", j);
+    }
+
+
+
+
 
 }
