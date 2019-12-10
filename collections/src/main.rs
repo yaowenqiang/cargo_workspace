@@ -52,9 +52,20 @@ fn main() {
         println!("{}", i);
     }
 
+    /*
     for j in vvvv { 
         println!("{}", j);
     }
+    */
+
+    let vec1 = vec![1,2,3,4];
+    let vec2 = vec![5,6,7,8];
+
+    println!("2 in vec1  {}", vec1.iter().any(|&x|  x == 2));
+    println!("2 in vec2  {}", vec1.into_iter().any(|x|  x == 2));
+
+
+
 
 
 
