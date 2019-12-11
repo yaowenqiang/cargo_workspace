@@ -1,4 +1,4 @@
-
+use std::collections::HashMap;
 fn main() {
     let mut v : Vec<i32>  = Vec::new();
 
@@ -63,6 +63,17 @@ fn main() {
 
     println!("2 in vec1  {}", vec1.iter().any(|&x|  x == 2));
     println!("2 in vec2  {}", vec1.into_iter().any(|x|  x == 2));
+
+
+    let mut scores = HashMap::new();
+    scores.insert(String::from("blue"), 10);
+    scores.insert(String::from("Yello"), 10);
+
+    println!("{:?}", scores);
+
+
+
+
 
 
 
