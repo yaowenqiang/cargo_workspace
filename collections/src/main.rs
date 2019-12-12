@@ -72,6 +72,15 @@ fn main() {
     println!("{:?}", scores);
 
 
+    let teams = vec![String::from("blue"), String::from("yellow")];
+
+    let initial_scores = vec![20, 30];
+
+    let scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
+
+    println!("{:?}", scores);
+
+
 
 
 
