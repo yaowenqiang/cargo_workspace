@@ -96,6 +96,14 @@ fn main() {
     println!("{:?}", row);
 
 
+    let data = "initial contents";
+
+    let s = data.to_string();
+    println!("{}", s);
+
+    let ss = "initial contents".to_string();
+    println!("{}", ss);
+
 
 
 
