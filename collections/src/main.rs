@@ -105,6 +105,25 @@ fn main() {
     println!("{}", ss);
 
 
+    let s = String::from("initial_strings");
+    println!("{}", s);
+
+    let mut s = String::from("你好");
+    s.push_str(",天气不错");
+    println!("{}", s);
+
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("World ");
+    //let s3 = &s1 + &s2;
+    let s3 = s1 + &s2;
+
+    println!("{}", s3);
+    //println!("{}", s1);
+    println!("{}", s2);
+
+    let s4 = format!("{}-{}`", s2, s3);
+    println!("{}", s4);
+
 
 
 
