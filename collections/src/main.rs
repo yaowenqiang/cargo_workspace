@@ -125,6 +125,22 @@ fn main() {
     println!("{}", s4);
 
 
+    let mut s1 = String::from("hello");
+    let mut s2 = "world";
+    s1.push_str(s2);
+
+    //s2.push('!');
+
+
+    println!("{}", s2);
+    let len = String::from("你好").len();
+    //println!("{}", s2[0]);
+    println!("{}", len);
+
+    let zh_str = String::from("圣诞节");
+    for c in zh_str.chars() {
+        println!("{}", c);
+    }
 
 
 
