@@ -142,6 +142,9 @@ fn main() {
         println!("{}", c);
     }
 
+    for b in zh_str.bytes() {
+        println!("{}", b);
+    }
 
 
 
