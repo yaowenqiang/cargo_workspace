@@ -147,6 +147,16 @@ fn main() {
     }
 
 
+    let first_name = String::from("jack");
+    let last_name = String::from("yao");
+
+    let mut map = HashMap::new();
+    map.insert(&first_name, last_name);
+    //map.insert(&first_name, last_name);
+    println!("{:#?}", map);
+    println!("{:#?}", first_name);
+
+
 
 
 
