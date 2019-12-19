@@ -158,6 +158,13 @@ fn main() {
 
 
 
+    println!("{:?}", map.get(&first_name));
+
+    for(key, value) in  map {
+        println!("{} : {}", key, value);
+    }
+
+
 
 
 
