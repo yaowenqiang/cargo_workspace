@@ -164,6 +164,24 @@ fn main() {
         println!("{} : {}", key, value);
     }
 
+    let mut map2 = HashMap::new();
+    let red = String::from("red");
+    let yello = String::from("yello");
+    map2.insert(&red, &yello);
+    map2.insert(&red, &yello);
+    map2.insert(&red, &yello);
+    map2.insert(&red, &yello);
+    map2.insert(&red, &yello);
+    
+    map2.entry(&String::from("Yellow")).or_insert(&String::from("yellow"));
+    map2.entry(&String::from("Green")).or_insert(&String::from("Green"));
+
+    println!("{:#?}", map2);
+
+
+
+
+
 
 
 
