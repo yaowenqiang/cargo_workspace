@@ -173,10 +173,30 @@ fn main() {
     map2.insert(&red, &yello);
     map2.insert(&red, &yello);
     
-    map2.entry(&String::from("Yellow")).or_insert(&String::from("yellow"));
-    map2.entry(&String::from("Green")).or_insert(&String::from("Green"));
+    //map2.entry(&String::from("Yellow")).or_insert(&String::from("yellow"));
+    //map2.entry(&String::from("Green")).or_insert(&String::from("Green"));
 
     println!("{:#?}", map2);
+
+
+
+    let mut  map3 = HashMap::new();
+    map3.insert(String::from("first"), 1);
+    map3.entry(String::from("second")).or_insert(4);
+    map3.entry(String::from("second")).or_insert(5);
+
+    println!("{:#?}", map3);
+
+    let map4 : HashMap<&str, i32> = HashMap::new();
+
+    for (k, v) in &map4 {
+        //let count = map4.entry(String::from(k));
+        //println!("{:?}", count);
+
+        //*count  += 1;
+        println!("{} {}", k, v);
+    }
+
 
 
 
