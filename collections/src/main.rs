@@ -195,7 +195,24 @@ fn main() {
 
         //*count  += 1;
         println!("{} {}", k, v);
+
+
     }
+    
+    let text = "hello world wonderful world";
+
+    let mut map5:  HashMap<&str, i32>   = HashMap::new();
+
+    for word in text.split_whitespace() {
+        println!("{}", &word);
+        //map5.insert(word, 1);
+        let count = map5.entry(word).or_insert(0);
+        *count += 1;
+        //println!("{:?}", count.key());
+    }
+
+    
+    println!("{:?}", map5);
 
 
 
