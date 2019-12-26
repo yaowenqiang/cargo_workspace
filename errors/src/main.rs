@@ -27,6 +27,17 @@ fn main() {
         }
     };
 
-    print!("{:?}", f);
+    print!("{:?}\n", f);
+
+    let f2 = File::open("world.txt").unwrap_or_else(|error | {
+        if error.kind() == ErrorKind::NotFound {
+            File::create("world.txt").unwrap_or_else(|error| {
+                panic!("Problem creating the file {:?}", error) ;       
+            })
+        } else {
+            panic!("Problem opening the file {:?}", error);
+        }
+    });
+    print!("{:?}\n", f2);
 
 }
