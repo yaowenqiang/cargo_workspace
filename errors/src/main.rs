@@ -40,4 +40,15 @@ fn main() {
     });
     print!("{:?}\n", f2);
 
+
+    let f3 = File::open("hello.txt").unwrap();
+    print!("{:?}\n", f3);
+
+
+    let f4 = File::open("hello.txt").expect("Failed to open hello.txt");
+    print!("{:?}\n", f4);
+
+
 }
+
+
