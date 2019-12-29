@@ -1,4 +1,5 @@
 use std::fs::File;
+use std::fs;
 use std::io::ErrorKind;
 use std::io::Read;
 use std::io;
@@ -49,10 +50,18 @@ fn main() {
 
     let f4 = File::open("hello.txt").expect("Failed to open hello.txt");
     print!("{:?}\n", f4);
-    let username = read_username_from_file().expect("get username failed");
-    print!("{:?}", username);
+    //let username = read_username_from_file().expect("get username failed");
+    //print!("{:?}", username);
 
+    //let username2 = read_username_from_filev2();
+    let username2 = read_username_from_filev2().unwrap();
+    print!("{:?}", username2);
 
+    let username3 = read_username_from_filev3().unwrap();
+    print!("{:?}", username3);
+
+    let username4 = read_username_from_filev4().unwrap();
+    print!("{:?}", username4);
 
 
 
@@ -75,3 +84,21 @@ fn read_username_from_file() -> Result<String, io::Error> {
 }
 
 
+fn read_username_from_filev2() -> Result<String, io::Error> {
+    let mut f = File::open("hello3.txt")?;
+    let mut s = String::new();
+    f.read_to_string(&mut s)?;
+    Ok(s)
+
+}
+
+fn read_username_from_filev3() -> Result<String, io::Error> {
+    let mut s = String::new();
+    File::open("hello3.txt")?.read_to_string(&mut s)?;
+    Ok(s)
+
+}
+
+fn read_username_from_filev4() -> Result<String, io::Error> {
+    fs::read_to_string("hello3.txt")
+}
