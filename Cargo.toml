@@ -5,4 +5,10 @@ members = [
     "add-one",
     "add-two",
     "login",
+    "server",
+    "thread",
+    "unsafe_demo",
+    "basic",
+    "collections",
+    "crates_demo",
 ]
