@@ -10,7 +10,7 @@ impl Parser{
     }
 }
 
-3[macro_rules! vec {
+[macro_rules] vec {
     (4($x:expr),*) => {
         let mut temp_vec = Vec::new();
         ${
