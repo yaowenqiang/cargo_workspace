@@ -13,4 +13,5 @@ members = [
     "crates_demo",
     "errors",
     "mysqlDemo",
+    "redis",
 ]
