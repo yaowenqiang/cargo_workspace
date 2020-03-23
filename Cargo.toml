@@ -14,4 +14,5 @@ members = [
     "errors",
     "mysqlDemo",
     "redis",
+    "fileread",
 ]
