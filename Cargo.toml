@@ -15,4 +15,5 @@ members = [
     "mysqlDemo",
     "redis",
     "fileread",
+    "enumdemo",
 ]
