@@ -15,6 +15,15 @@ fn main() {
             thread::sleep(Duration::from_millis(1));
             println!("current thread id is : {:#?}", thread::current().id());
         }
+    let body = reqwest::get("https://www.rust-lang.org")
+	.await?
+	.text()
+	.await?;
+
+    println!("body = {:?}", body);
+
+
+
     });
 
     handle.join().unwrap();
@@ -66,7 +75,7 @@ fn bad_thread_usage() {
     let v = vec![1,2,3];
 
     let handle = thread::spawn( move || {
-        println!("Here's a vector: {:?}", v); 
+        println!("Here's a vector: {:?}", v);
     });
 
     //drop(v);
