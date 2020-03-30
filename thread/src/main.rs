@@ -15,6 +15,11 @@ fn main() {
             thread::sleep(Duration::from_millis(1));
             println!("current thread id is : {:#?}", thread::current().id());
         }
+	let body = reqwest::get("https://www.rust-lang.org")
+	    .text();
+	println!("body = {:?}", body);
+
+        
     });
 
     handle.join().unwrap();
