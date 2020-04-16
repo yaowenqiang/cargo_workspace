@@ -17,4 +17,5 @@ members = [
     "fileread",
     "enumdemo",
     "term",
+    "messages",
 ]
