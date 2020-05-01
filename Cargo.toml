@@ -19,4 +19,5 @@ members = [
     "term",
     "messages",
     "tcp_server",
+    "network_programming",
 ]
