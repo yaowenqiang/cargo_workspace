@@ -1,0 +1,20 @@
+use std::net::UdpSocket;
+use std::{str, io};
+
+fn main() {
+    let socket = UdpSocket::bind("localhost:8000").expect("Could not bind client socket");
+    socket.connect("localhost:8888").expect("Could not connect to server");
+
+    loop {
+        let mut input = String::new();
+        let mut buffer = [0u8; 1500];
+
+        io::stdin().read_line(&mut input).expect("Failed to read from stdin");
+
+        socket.send(input.as_bytes()).expect("Failed to write to server");
+
+        socket.recv_from(&mut buffer).expect("Could not read into buffer");
+
+        println!("{}", str::from_utf8(&buffer).expect("Coult not write buffer as string"));
+    }
+}
