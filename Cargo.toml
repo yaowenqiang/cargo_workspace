@@ -20,4 +20,5 @@ members = [
     "messages",
     "tcp_server",
     "network_programming",
+    "elastic",
 ]
