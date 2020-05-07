@@ -21,4 +21,6 @@ members = [
     "tcp_server",
     "network_programming",
     "elastic",
+    "rabbitmq",
+    "futures",
 ]
