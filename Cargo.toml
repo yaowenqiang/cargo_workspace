@@ -23,4 +23,5 @@ members = [
     "elastic",
     "rabbitmq",
     "futures",
+    "boxes",
 ]
